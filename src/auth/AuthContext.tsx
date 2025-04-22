@@ -41,6 +41,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const token = localStorage.getItem('jwt')
     if (token) {
+      console.log("Trying to retrieve session with token:", token)
       axios.get(`${apiBase}/me`, {
         headers: { Authorization: `Bearer ${token}` }
       }).then(res => {
