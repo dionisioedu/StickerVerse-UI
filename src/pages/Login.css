@@ -1,0 +1,75 @@
+.login-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0ebf8, #e2f3f5, #fdf2e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .login-panel {
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    padding: 3rem;
+    text-align: center;
+    animation: fade-in 1s ease forwards;
+  }
+  
+  .logo-area .brand {
+    font-size: 2.5rem;
+    color: #7c3aed;
+    margin-bottom: 0.5rem;
+  }
+  
+  .logo-area .subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  .description-box {
+    background-color: #f9f9fb;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    color: #444;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .login-section {
+    margin-bottom: 2rem;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .links a {
+    text-decoration: none;
+    color: #7c3aed;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

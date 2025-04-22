@@ -1,0 +1,126 @@
+.dashboard-container {
+  min-height: 100vh;
+  background: #f8f8fc;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* HEADER */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #7c3aed;
+}
+
+.search-input {
+  flex: 1;
+  margin: 0 2rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  max-width: 600px;
+  background-color: #f3f3f8;
+  font-size: 1rem;
+}
+
+.profile-menu {
+  position: relative;
+}
+
+.dashboard-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #7c3aed;
+  cursor: pointer;
+}
+
+.profile-menu:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 52px;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  min-width: 140px;
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+
+.dropdown a,
+.dropdown button {
+  display: block;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  color: #333;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropdown a:hover,
+.dropdown button:hover {
+  background-color: #f3f3f3;
+}
+
+/* ALBUM GRID */
+.album-grid {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.album-card {
+  background: white;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.album-card:hover {
+  transform: translateY(-4px);
+}
+
+.album-cover {
+  background: linear-gradient(135deg, #e2f3f5, #f0ebf8);
+  height: 180px;
+}
+
+.album-info {
+  padding: 1rem;
+}
+
+.album-info h3 {
+  margin: 0;
+  color: #4c1d95;
+  font-size: 1.2rem;
+}
+
+.album-info p {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: #666;
+}
