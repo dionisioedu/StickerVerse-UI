@@ -1,16 +1,31 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AuthContext } from '../auth/AuthContext'
 import { Link } from 'react-router-dom'
 import './Dashboard.css'
 
 const Dashboard = () => {
   const { user, logout } = useContext(AuthContext)
+  const [showSearch, setShowSearch] = useState(false)
 
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
         <div className="logo">StickerVerse</div>
-        <input type="text" placeholder="Search albums or stickers..." className="search-input" />
+
+        <div className="search-wrapper">
+          <input
+            type="text"
+            placeholder="Search albums or stickers..."
+            className={`search-input ${showSearch ? 'visible' : ''}`}
+          />
+          <button
+            className="search-icon"
+            onClick={() => setShowSearch(!showSearch)}
+          >
+            🔍
+          </button>
+        </div>
+
         <div className="profile-menu">
           <img src={user?.avatarUrl} alt="avatar" className="dashboard-avatar" />
           <div className="dropdown">
