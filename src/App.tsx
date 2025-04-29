@@ -10,6 +10,7 @@ import { AuthProvider, AuthContext } from './auth/AuthContext'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Profile from './pages/Profile'
+import CreateSticker from './pages/CreateSticker'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/createsticker" element={<CreateSticker />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>

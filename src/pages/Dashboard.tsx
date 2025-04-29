@@ -1,11 +1,13 @@
 import { useContext, useState } from 'react'
 import { AuthContext } from '../auth/AuthContext'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Dashboard.css'
 
 const Dashboard = () => {
   const { user, logout } = useContext(AuthContext)
   const [showSearch, setShowSearch] = useState(false)
+  const navigate = useNavigate()
+  const hasCredits = (user?.credits ?? 0) > 0;
 
   return (
     <div className="dashboard-container">
@@ -27,6 +29,15 @@ const Dashboard = () => {
         </div>
 
         <div>
+            <button
+                disabled={!hasCredits}
+                onClick={() => navigate('/create')}
+                className="px-4 py-2 rounded shadow hover:bg-gray-200 create-sticker-button">
+                ➕ Create Sticker
+            </button>
+        </div>
+
+        <div className="profile-credits">
             <p>Credits: {user?.credits} </p>
         </div>
 

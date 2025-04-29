@@ -1,0 +1,86 @@
+/*
+CreateSticker.css
+*/
+
+.create-sticker-container {
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.create-sticker-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.create-sticker-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.create-sticker-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.create-sticker-input,
+.create-sticker-file-input {
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.create-sticker-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 1.25rem;
+  background: #f0f0f3;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.1), -4px -4px 8px rgba(255,255,255,0.7);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.create-sticker-button:hover:not(:disabled) {
+  background: #e0e0e6;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1), -2px -2px 4px rgba(255,255,255,0.7);
+  transform: translateY(-1px);
+}
+
+.create-sticker-button:active:not(:disabled) {
+  background: #d1d1d8;
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,0.1), inset -2px -2px 4px rgba(255,255,255,0.7);
+  transform: translateY(0);
+}
+
+.create-sticker-button:focus-visible {
+  outline: 3px solid #88b7ff;
+  outline-offset: 2px;
+}
+
+.create-sticker-button:disabled {
+  background: #f5f5f5;
+  color: #aaa;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.create-sticker-warning {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}

@@ -94,6 +94,56 @@
   flex-shrink: 0;
 }
 
+.profile-credits {
+    color: #555357;
+}
+
+.create-sticker-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 1.5rem;
+  background: #f0f0f3;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+              -4px -4px 8px rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: 
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.create-sticker-button:hover:not(:disabled) {
+  background: #e0e0e6;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+              -2px -2px 4px rgba(255, 255, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+.create-sticker-button:active:not(:disabled) {
+  background: #d1d1d8;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1),
+              inset -2px -2px 4px rgba(255, 255, 255, 0.7);
+  transform: translateY(0);
+}
+
+.create-sticker-button:focus-visible {
+  outline: 3px solid #88b7ff;
+  outline-offset: 2px;
+}
+
+.create-sticker-button:disabled {
+  background: #f5f5f5;
+  color: #aaa;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 .dashboard-avatar {
   width: 42px;
   height: 42px;
