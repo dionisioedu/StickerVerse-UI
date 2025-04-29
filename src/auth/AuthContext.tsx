@@ -10,6 +10,7 @@ export type User = {
   username: string
   email: string
   avatarUrl?: string
+  credits: number
 }
 
 type AuthContextType = {

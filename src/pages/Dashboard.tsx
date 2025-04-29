@@ -26,6 +26,10 @@ const Dashboard = () => {
           </button>
         </div>
 
+        <div>
+            <p>Credits: {user?.credits} </p>
+        </div>
+
         <div className="profile-menu">
           <img src={user?.avatarUrl} alt="avatar" className="dashboard-avatar" />
           <div className="dropdown">
