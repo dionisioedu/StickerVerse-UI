@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Album } from '../types/Album'
 
-const apiBase = import.meta.env.VITE_BASE_URL
+const apiBase = import.meta.env.VITE_API_BASE_URL
 
 export async function getUserAlbums(): Promise<Album[]> {
     const token = localStorage.getItem('jwt')
