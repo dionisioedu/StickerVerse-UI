@@ -1,13 +1,40 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { AuthContext } from '../auth/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 import './Dashboard.css'
+import { Album } from '../types/Album'
+import { createAlbum, getUserAlbums } from '../api/albums'
 
 const Dashboard = () => {
   const { user, logout } = useContext(AuthContext)
   const [showSearch, setShowSearch] = useState(false)
   const navigate = useNavigate()
   const hasCredits = (user?.credits ?? 0) > 0;
+  const [albums, setAlbums] = useState<Album[]>([])
+  const [loading, setLoading] = useState(true)
+  const [newAlbum, setNewAlbum] = useState({
+    name: '',
+    description: '',
+    isPrivate: false,
+  })
+
+  useEffect(() => {
+    getUserAlbums()
+      .then(setAlbums)
+      .catch(err => console.error('Error fetching albums:', err))
+      .finally(() => setLoading(false))
+  }, [])
+
+  const handleCreateAlbum = async () => {
+    try {
+      const created = await createAlbum(newAlbum)
+      setAlbums(prev => [...prev, created])
+      setNewAlbum({ name: '', description: '', isPrivate: false })
+    } catch (err) {
+      alert('Failed to create album')
+      console.error(err)
+    }
+  }
 
   return (
     <div className="dashboard-container">
@@ -51,16 +78,45 @@ const Dashboard = () => {
       </header>
 
       <main className="album-grid">
-        {/* Placeholder cards for now */}
-        {[...Array(10)].map((_, i) => (
-          <div className="album-card" key={i}>
+        {albums.map((album) => (
+          <div className="album-card" key={album.id}>
             <div className="album-cover"></div>
             <div className="album-info">
-              <h3>Album {i + 1}</h3>
+              <h3>{album.name}</h3>
               <p>by {user?.username}</p>
             </div>
           </div>
         ))}
+
+        <div className="album-card create-album-card">
+          <h3>Create Album</h3>
+
+          <input
+            type="text"
+            placeholder="Name"
+            value={newAlbum.name}
+            onChange={(e) => setNewAlbum({ ...newAlbum, name: e.target.value })}
+          />
+
+          <textarea
+            placeholder="Description"
+            value={newAlbum.description}
+            onChange={(e) => setNewAlbum({ ...newAlbum, description: e.target.value })}
+          />
+
+          <label style={{ fontSize: '0.9rem' }}>
+            <input
+              type="checkbox"
+              checked={newAlbum.isPrivate}
+              onChange={(e) => setNewAlbum({ ...newAlbum, isPrivate: e.target.checked })}
+            />
+            Private
+          </label>
+
+          <button onClick={handleCreateAlbum} disabled={!newAlbum.name}>
+            ➕ Create
+          </button>
+        </div>
       </main>
     </div>
   )
