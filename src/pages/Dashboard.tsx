@@ -39,7 +39,9 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
-        <div className="logo">StickerVerse</div>
+        <div className="logo" onClick={() => window.location.href = '/'}>
+          StickerVerse
+        </div>
 
         <div className="search-wrapper">
           <input

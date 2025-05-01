@@ -22,10 +22,15 @@
 }
 
 .logo {
-  font-size: 1.8rem;
+  cursor: pointer;
   font-weight: bold;
-  color: #7c3aed;
-  flex-shrink: 0;
+  font-size: 1.5rem;
+  color: #4c1d95;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .search-wrapper {

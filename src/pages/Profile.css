@@ -128,3 +128,18 @@
     transform: translateY(0);
   }
 }
+
+.back-home {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #7c3aed;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.back-home:hover {
+  color: #5b21b6;
+}

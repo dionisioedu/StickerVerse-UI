@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react'
 import { AuthContext } from '../auth/AuthContext'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import './Profile.css'
 
@@ -35,6 +36,7 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
+      <Link to="/" className="back-home" title="Back to home">←</Link>
       <div className="profile-card animated-slide-in">
         {editing ? (
           <>
