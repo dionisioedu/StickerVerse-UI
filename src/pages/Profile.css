@@ -24,8 +24,47 @@
   color: #4c1d95;
 }
 
-.username {
+.display {
+  cursor: pointer;
   color: #7c3aed;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.display:hover {
+  color: #5b21b6;
+}
+
+.edit-display {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 1rem;
+  outline: none;
+  text-align: center;
+  font-weight: 500;
+}
+
+.edit-bio {
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 1rem;
+  border: 1px solid #ccc;
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
+  margin-bottom: 1rem;
+}
+
+.bio {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0.5rem 0 1rem;
+  font-style: italic;
+  white-space: pre-wrap;
 }
 
 .avatar {
@@ -41,6 +80,27 @@
   font-size: 0.95rem;
   color: #666;
   margin-bottom: 1.5rem;
+}
+
+.save-btn {
+  background: #4f46e5;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease;
+}
+
+.save-btn:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+.save-btn:disabled {
+  background: #bbb;
+  cursor: not-allowed;
 }
 
 .logout-btn {

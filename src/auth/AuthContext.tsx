@@ -11,6 +11,8 @@ export type User = {
   email: string
   avatarUrl?: string
   credits: number
+  display?: string
+  bio?: string
 }
 
 type AuthContextType = {
