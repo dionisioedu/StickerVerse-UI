@@ -149,6 +149,45 @@
   cursor: not-allowed;
 }
 
+.sticker-row {
+  display: flex;
+  overflow-x: auto;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  scrollbar-width: none;
+}
+.sticker-row::-webkit-scrollbar {
+  display: none;
+}
+
+.sticker-card {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 140px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.sticker-card:hover {
+  transform: scale(1.05);
+}
+.sticker-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.sticker-card p {
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+  color: #333;
+}
+
 .dashboard-avatar {
   width: 42px;
   height: 42px;

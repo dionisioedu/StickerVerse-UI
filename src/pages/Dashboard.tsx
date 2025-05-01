@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Dashboard.css'
 import { Album } from '../types/Album'
 import { createAlbum, getUserAlbums } from '../api/albums'
+import { getUserStickers } from '../api/stickers'
+import { Sticker } from '../types/Sticker'
 import Footer from '../components/Footer'
 
 const Dashboard = () => {
@@ -18,12 +20,20 @@ const Dashboard = () => {
     description: '',
     isPrivate: false,
   })
+  const [stickers, setStickers] = useState<Sticker[]>([])
 
   useEffect(() => {
     if (!loading && !user) {
       navigate('/login')
     }
   }, [user, loading, navigate])
+
+  useEffect(() => {
+    getUserStickers()
+      .then(setStickers)
+      .catch(err => console.error('Error fetching stickers:', err))
+      .finally(() => setLoading(false))
+  }, [])
 
   useEffect(() => {
     getUserAlbums()
@@ -86,6 +96,17 @@ const Dashboard = () => {
           </div>
         </div>
       </header>
+
+      {stickers.length > 0 && (
+        <div className="sticker-row">
+          {stickers.map(sticker => (
+            <div className="sticker-card" key={sticker.id}>
+              <img src={sticker.imageUrl} alt={sticker.name} />
+              <p>{sticker.name}</p>
+            </div>
+          ))}
+        </div>
+      )}
 
       <main className="album-grid">
         {albums.map((album) => (
