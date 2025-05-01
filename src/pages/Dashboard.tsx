@@ -19,6 +19,12 @@ const Dashboard = () => {
   })
 
   useEffect(() => {
+    if (!loading && !user) {
+      navigate('/#login')
+    }
+  }, [user, loading, navigate])
+
+  useEffect(() => {
     getUserAlbums()
       .then(setAlbums)
       .catch(err => console.error('Error fetching albums:', err))
