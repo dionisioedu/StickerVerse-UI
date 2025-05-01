@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!loading && !user) {
-      navigate('/#login')
+      navigate('/login')
     }
   }, [user, loading, navigate])
 
