@@ -36,7 +36,7 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
-      <Link to="/" className="back-home" title="Back to home">←</Link>
+      <Link to="/" className="back-home" title="Back to home">← Back to home</Link>
       <div className="profile-card animated-slide-in">
         {editing ? (
           <>
