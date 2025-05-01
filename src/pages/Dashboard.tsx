@@ -97,7 +97,7 @@ const Dashboard = () => {
         </div>
       </header>
 
-      {stickers.length > 0 && (
+      {Array.isArray(stickers) && stickers.length > 0 && (
         <div className="sticker-row">
           {stickers.map(sticker => (
             <div className="sticker-card" key={sticker.id}>
