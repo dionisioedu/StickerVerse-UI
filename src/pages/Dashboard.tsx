@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Dashboard.css'
 import { Album } from '../types/Album'
 import { createAlbum, getUserAlbums } from '../api/albums'
+import Footer from '../components/Footer'
 
 const Dashboard = () => {
   const { user, logout } = useContext(AuthContext)
@@ -43,6 +44,7 @@ const Dashboard = () => {
   }
 
   return (
+    <>
     <div className="dashboard-container">
       <header className="dashboard-header">
         <div className="logo" onClick={() => window.location.href = '/'}>
@@ -127,6 +129,8 @@ const Dashboard = () => {
         </div>
       </main>
     </div>
+    <Footer />
+    </>
   )
 }
 

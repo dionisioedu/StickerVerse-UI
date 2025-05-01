@@ -3,6 +3,7 @@ import { AuthContext } from '../auth/AuthContext'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import './Profile.css'
+import Footer from '../components/Footer'
 
 const apiBase = import.meta.env.VITE_API_BASE_URL
 
@@ -35,9 +36,10 @@ const Profile = () => {
   }
 
   return (
+    <>
     <div className="profile-container">
       <Link to="/" className="back-home" title="Back to home">← Back to home</Link>
-      <div className="profile-card animated-slide-in">
+      <div className="profile-card fade-in">
         {editing ? (
           <>
             <input
@@ -81,6 +83,8 @@ const Profile = () => {
         <button className="logout-btn" onClick={logout}>Logout</button>
       </div>
     </div>
+    <Footer />
+    </>
   )
 }
 
