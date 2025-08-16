@@ -61,31 +61,8 @@ const Dashboard = () => {
           StickerVerse
         </div>
 
-        <div className="search-wrapper">
-          <input
-            type="text"
-            placeholder="Search albums or stickers..."
-            className={`search-input ${showSearch ? 'visible' : ''}`}
-          />
-          <button
-            className="search-icon"
-            onClick={() => setShowSearch(!showSearch)}
-          >
-            🔍
-          </button>
-        </div>
-
-        <div>
-            <button
-                disabled={!hasCredits}
-                onClick={() => navigate('/create')}
-                className="px-4 py-2 rounded shadow hover:bg-gray-200 create-sticker-button">
-                ➕ Create Sticker
-            </button>
-        </div>
-
         <div className="profile-credits">
-            <p>Credits: {user?.credits} </p>
+            <p>Credits: <b>{user?.credits}</b> </p>
         </div>
 
         <div className="profile-menu">
