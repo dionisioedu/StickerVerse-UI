@@ -2,9 +2,6 @@ import { useContext, useState, useEffect } from 'react'
 import { AuthContext } from '../auth/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 import './Dashboard.css'
-import { createAlbum, getUserAlbums } from '../api/albums'
-import { getUserStickers } from '../api/stickers'
-import { Sticker } from '../types/Sticker'
 import Footer from '../components/Footer'
 import UltraMiniLoloGame from '../components/UltraMiniLoloGame'
 
@@ -12,12 +9,6 @@ const Dashboard = () => {
   const { user, logout } = useContext(AuthContext)
   const navigate = useNavigate()
   const [loading, setLoading] = useState(true)
-  const [newAlbum, setNewAlbum] = useState({
-    name: '',
-    description: '',
-    isPrivate: false,
-  })
-  const [stickers, setStickers] = useState<Sticker[]>([])
 
   useEffect(() => {
     if (!loading && !user) {
