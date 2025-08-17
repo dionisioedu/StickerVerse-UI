@@ -140,6 +140,15 @@ function fromAscii(name: string, rows: string[]): Level {
         case "B":
           row.push(Tile.Block);
           break;
+        case "R":
+          row.push(Tile.Stone);
+          break;
+        case "A":
+          row.push(Tile.Water);
+          break;
+        case "D":
+          row.push(Tile.Bridge);
+          break;
         case "H":
           row.push(Tile.Heart);
           break;
@@ -186,17 +195,17 @@ function fromAscii(name: string, rows: string[]): Level {
 const LEVELS: Level[] = [
   fromAscii("Stage 1", [
     "WWWWWWWGWWWWW",
-    "WBBBBBB.BBTTW",
-    "WBTTBH..BBTTW",
-    "W.TTBBB.BBBTW",
-    "W..TTBB.BBBTW",
-    "WP...BB.BBTHW",
-    "W......S.B..W",
+    "WRRRRRR.RRTTW",
+    "WRTTRH..RRTTW",
+    "W.TTRRR.RRRTW",
+    "W..TTRR.RRRTW",
+    "WP...RR.RRTHW",
+    "W......S.R..W",
     "W.TT........W",
     "WTTTT...TT..W",
     "WTTTT...TTT.W",
-    "WBTTBC...TT.W",
-    "WBBBBBB    .W",
+    "WRTTRC...TT.W",
+    "WRRRRRR    .W",
     "WWWWWWWWWWWWW",
   ]),
 ];
