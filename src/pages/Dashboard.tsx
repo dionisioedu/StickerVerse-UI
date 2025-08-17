@@ -3,7 +3,7 @@ import { AuthContext } from '../auth/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 import './Dashboard.css'
 import Footer from '../components/Footer'
-import UltraMiniLoloGame from '../components/UltraMiniLoloGame'
+import LoloGame from '../components/LoloGame'
 
 const Dashboard = () => {
   const { user, logout } = useContext(AuthContext)
@@ -37,7 +37,7 @@ const Dashboard = () => {
         </div>
       </header>
 
-      <UltraMiniLoloGame />
+      <LoloGame />
     </div>
     <Footer />
     </>
